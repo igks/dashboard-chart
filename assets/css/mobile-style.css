@@ -1,0 +1,34 @@
+@media only screen and (max-width: 767px){
+/*Header*/
+  .container-header{
+  	position: relative;
+  	height: 100px;
+  }
+  .navbar-brand{
+  	margin-left: 5px;
+  }
+  .header-font{
+  	font-size: 15px;
+  }
+  .btn-menu, .nav{
+  	position: absolute;
+  	top: 60px;
+  	padding: 0 6px;
+  }
+/*end of header*/
+/*button opsi*/
+.btn-opsi{
+	display: inline-block;
+	margin: 2px;
+	font-size: .7em;
+	padding: 3px;
+	width: 5em ;
+}
+/*end of button opsi*/
+/*Table detail*/
+.table-title{
+	margin-top: 15px;
+}
+/*end of table detail*/
+
+}

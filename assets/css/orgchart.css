@@ -1,0 +1,295 @@
+/* Set semua element org pada pasisi relative */
+ol.org-chart,
+ol.org-chart ol,
+ol.org-chart li,
+ol.org-chart li > div {
+    position: relative;
+}
+/* Hilangkan underline hyperlink dan set text nama dan jabatan*/
+.org-chart a{
+    text-decoration: none;
+    pointer-events: none;
+    color: black;
+}
+.nama{
+    font-size: 18px;
+    font-family: Arial;
+}
+.jabatan{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Consolas;
+}
+/* Hilangkan list style untuk semua order list*/
+ol.org-chart,
+ol.org-chart ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ol.org-chart {
+    text-align: center;
+}
+ol.org-chart ol {
+    padding-top: 1em;
+}
+
+ol.org-chart ol:before,
+ol.org-chart ol:after,
+ol.org-chart li:before,
+ol.org-chart li:after,
+ol.org-chart > li > div:before,
+ol.org-chart > li > div:after {
+    background-color: blue;
+    content:'';
+    position: absolute;
+}
+/* Padding sub ordinat */
+ol.org-chart ol > li {
+    padding: 2em 0 0 1em;
+}
+/* Line sub ordinat */
+ol.org-chart > li ol:before {
+    height: 1em;
+    left: 50%;
+    top: 0;
+    width: 3px;
+}
+ol.org-chart > li ol:after {
+    height: 3px;
+    left: 3px;
+    top: 1em;
+    width: 50%;
+}
+ol.org-chart > li ol > li:not(:last-of-type):before {
+    height: 3px;
+    left: 0;
+    top: 3em;
+    width: 1em;
+}
+ol.org-chart > li ol > li:not(:last-of-type):after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 3px;
+}
+ol.org-chart > li ol > li:last-of-type:before {
+    height: 3px;
+    left: 0;
+    top: 3em;
+    width: 1em;
+}
+ol.org-chart > li ol > li:last-of-type:after {
+    height: 3em;
+    left: 0;
+    top: 0;
+    width: 3px;
+}
+/* Background semua div didalam list*/
+/* BG Level 6*/
+ol.org-chart li > div {
+    background-color: #ccc;
+    border-radius: 3px;
+    min-height: 2em;
+    padding: 5px;
+    border-radius: 10px;
+}
+/*** Level 1 ***/
+/* BG level 1 */
+ol.org-chart > li > div {
+    background-color: rgba(0, 230, 0,1);
+    margin-right: 1em;
+    transition: .3s;
+}
+/* Line level 1*/
+ol.org-chart > li > div:before {
+    bottom: 2em;
+    height: 3px;
+    right: -1em;
+    width: 1em;
+}
+ol.org-chart > li > div:first-of-type:after {
+    bottom: 0;
+    height: 2em;
+    right: -1em;
+    width: 3px;
+}
+ol.org-chart > li > div + div:after {
+    height: calc(100% + 1em);
+    right: -1em;
+    top: -1em;
+    width: 3px;
+}
+/* Margin level 1*/
+ol.org-chart > li > div + div {
+    margin-top: 1em;
+}
+/* Level 1 hover*/
+ol.org-chart div.lvl-1:hover{
+    background-color: rgba(0, 230, 0,.5);
+    box-shadow: 0 0 15px rgba(0, 230, 0,1), 0 0 10px white inset;
+}
+ol.org-chart > li > div:hover a{
+    color: white;
+}
+ol.org-chart > li > div:hover ~ ol li div{
+    background-color: rgba(0, 230, 0,.5);
+    box-shadow: 0 0 5px rgba(0, 230, 0,1), 0 0 15px white inset;
+}
+ol.org-chart > li > div:hover ~ ol li div a{
+    color:white;
+}
+
+/*** Level 2 ***/
+/* Line level 1 to level 2*/
+ol.org-chart > li > ol:before {
+    left: inherit;
+    right: 0;
+}
+ol.org-chart > li > ol:after {
+    left: 0;
+    width: 100%;
+}
+/* BG level 2*/
+ol.org-chart > li > ol > li > div {
+    background-color: rgba(0, 153, 255,1);
+    transition: .3s;
+}
+/* Level 2 hover */
+div.lvl-2:hover{
+    background-color: rgba(0, 153, 255,.5);
+    box-shadow: 0 0 5px rgba(0, 153, 255,1) , 0 0 15px white inset;
+}
+div.lvl-2:hover a{
+    color: white;
+}
+div.lvl-2:hover ~ ol.lvl-3 li div{
+    background-color: rgba(0, 153, 255,.5);
+    box-shadow: 0 0 5px rgba(0, 153, 255,1) , 0 0 15px white inset;
+}
+div.lvl-2:hover ~ ol.lvl-3 li div a{
+    color: white;
+}
+/*** Level 3 ***/
+/* BG level 3 */
+ol.org-chart > li > ol > li > ol > li > div {
+    background-color: rgba(153, 102, 255,1);
+    transition: .3s;
+}
+ol.lvl-3 li div:hover{
+    background-color: rgba(153, 102, 255,.5);
+    box-shadow: 0 0 5px rgba(153, 102, 255,1) , 0 0 15px white inset;
+}
+ol.lvl-3 li div:hover a{
+    color: white;
+}
+
+@media only screen and ( min-width: 768px ) {
+    /* Level 1 */
+    ol.org-chart > li > div {
+        display: inline-block;
+        float: none;
+        margin: 0 .5em .5em .5em;
+        vertical-align: bottom;
+    }
+    ol.org-chart > li > div:only-of-type {
+        margin-bottom: 0;
+        width: 100px;
+        width: calc((100% / 1) - 2em - 4px);
+    }
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(2),
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(2) ~ div {
+        width: calc((100% / 2) - 2em - 4px);
+    }
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(3),
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(3) ~ div {
+        width: calc((100% / 3) - 2em - 4px);
+    }
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(4),
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(4) ~ div {
+        width: calc((100% / 4) - 2em - 4px);
+    }
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(5),
+    ol.org-chart > li > div:first-of-type:nth-last-of-type(5) ~ div {
+        width: calc((100% / 5) - 2em - 4px);
+    }
+    ol.org-chart > li > div:before,
+    ol.org-chart > li > div:after {
+        bottom: -1em !important;
+        top: inherit !important;
+    }
+    ol.org-chart > li > div:before {
+        height: 1em !important;
+        left: 50% !important;
+        width: 3px !important;
+    }
+    ol.org-chart > li > div:only-of-type:after {
+        display: none;
+    }
+    ol.org-chart > li > div:first-of-type:not(:only-of-type):after,
+    ol.org-chart > li > div:last-of-type:not(:only-of-type):after {
+        bottom: -1em;
+        height: 3px;
+        width: calc(50% + 1em + 3px);
+    }
+    ol.org-chart > li > div:first-of-type:not(:only-of-type):after {
+        left: calc(50% + 3px);
+    }
+    ol.org-chart > li > div:last-of-type:not(:only-of-type):after {
+        left: calc(-1em - 3px);
+    }
+    ol.org-chart > li > div + div:not(:last-of-type):after {
+        height: 3px;
+        left: -2em;
+        width: calc(100% + 4em);
+    }
+    /* Level 2 */
+    ol.org-chart > li > ol {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    /* Line */
+    ol.org-chart > li > ol:before,
+    ol.org-chart > li > ol > li:before {
+        height: 1em!important;
+        left: 50%!important;
+        top: 0!important;
+        width: 3px!important;
+    }
+    ol.org-chart > li > ol:after {
+        display: none;
+    }
+    ol.org-chart > li > ol > li {
+        flex-grow: 1;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 1em;
+    }
+    ol.org-chart > li > ol > li:only-of-type {
+        padding-top: 0;
+    }
+    ol.org-chart > li > ol > li:only-of-type:before,
+    ol.org-chart > li > ol > li:only-of-type:after {
+        display: none;
+    }
+    ol.org-chart > li > ol > li:first-of-type:not(:only-of-type):after,
+    ol.org-chart > li > ol > li:last-of-type:not(:only-of-type):after {
+        height: 3px;
+        top: 0;
+        width: 50%;
+    }
+    ol.org-chart > li > ol > li:first-of-type:not(:only-of-type):after {
+        left: 50%;
+    }
+
+    ol.org-chart > li > ol > li:last-of-type:not(:only-of-type):after {
+        left: 0;
+    }
+
+    ol.org-chart > li > ol > li + li:not(:last-of-type):after {
+        height: 3px;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}

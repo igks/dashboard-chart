@@ -1,0 +1,171 @@
+/*Header */
+
+.container-header{
+	position: relative;
+	height: 50px;
+}
+.header-font{
+	position: absolute;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	top: 8px;
+}
+.nav{
+	position: absolute;
+	top: 4px;
+	right: 2px;
+}
+.avatar{
+	font-size: 15px;
+	color: white;
+}
+.nav .nav-item > a:hover{
+	border:1px solid white;
+	border-radius: 10px;
+	color: white;
+	transition: .2s;
+	box-shadow: 0 0 15px white;
+}
+.dropdown-menu{
+	background-color: #fff;
+	border-radius: 5px;
+	padding:10px;
+}
+.dropdown-menu > a:hover{
+	border:1px solid white;
+	border-radius: 10px;
+	color: blue;
+	transition: .2s;
+	box-shadow: 0 0 15px blue;
+}
+.btn-menu:hover{
+	border:1px solid white;
+	box-shadow: 0 0 30px white;
+	transition: .2s;
+}
+/* end of header */
+/* Side navigation */
+/* Side navigation menu */
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgba(135,206,250,.9);
+	overflow-x: hidden;  /*Disable horizontal scroll */
+	padding-top: 20px;
+	transition: 0.5s;
+}
+/* Navigation menu links */
+.sidenav a {
+	padding: 4px 4px 4px 20px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #fff;
+	display: block;
+	transition: 0.3s;
+}
+/* Link hover text color */
+.sidenav a:hover {
+	color: blue;
+}
+/* Push body transition */
+#main {
+	transition: margin-left .5s;
+}
+/*end of side navigation*/
+/* Footer */
+.footer{
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+	padding: 10px;
+}
+/* end of footer */
+/*Custom*/
+/*Radio*/
+/* The container */
+.container-input {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default radio button */
+.container-input input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+/* On mouse-over, add a grey background color */
+.container-input:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+/* When the radio button is checked, add a blue background */
+.container-input input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the indicator (dot/circle) when checked */
+.container-input input:checked ~ .checkmark:after {
+  display: block;
+}
+/* Style the indicator (dot/circle) */
+.container-input .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+/*end of radio*/
+/*button opsi*/
+.btn-opsi{
+	padding: 3px;
+}
+/*end of button opsi*/
+/*Table detail siswa*/
+.tabel-detail-data{
+	padding: 0 10px;
+}
+.img-profil{
+	width: 200px;
+	height: 200px;
+}
+.table-title{
+	background-color: skyblue;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	padding: 5px;
+	font-weight: bold;
+}
+/*end of table detail*/
